@@ -1,0 +1,254 @@
+@import '../../styles/theme.module';
+
+@include themify() {
+  height: fit-content;
+  .player {
+    @include mobile {
+      display: flex;
+      justify-content: space-around;
+    }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: themed("primary");
+    padding: 1rem;
+    color: themed("text");
+
+    .left {
+      @include mobile {
+        width: 150px;
+        justify-content: space-around;
+      }
+      display: flex;
+
+      .play_pause {
+        @include mobile {
+          display: none;
+        }
+        margin-right: 1rem;
+        color: themed("accent");
+
+        svg {
+          font-size: 2rem;
+        }
+      }
+
+      .song_info {
+        p {
+          margin: 0;
+        width: fit-content;
+        }
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
+
+      .play_pause_mobile {
+        @include mobile {
+          display: block;
+        }
+        margin: auto;
+        display: none;
+
+        color: themed("accent");
+
+        svg {
+          font-size: 2rem;
+        }
+      }
+
+    }
+
+    .middle {
+      .track_progress_container {
+        @include mobile {
+          display: none;
+        }
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .track_bar {
+          margin: 0 30px;
+          flex-grow: 1;
+          -webkit-appearance: none;
+          width: 100%;
+          height: 10px;
+          outline: none;
+          border-radius: 30%;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: themed("text");
+            cursor: pointer;
+            border-radius: 50%;
+          }
+
+          &::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: themed("text");
+            cursor: pointer;
+            border-radius: 50%;
+          }
+
+          &::-webkit-slider-thumb:hover {
+            background-color: themed("thumb");
+          }
+
+          &::-moz-range-thumb:hover {
+            background-color: themed("thumb");
+          }
+
+          &::-moz-range-track {
+            background: linear-gradient(to right, themed("primary") 0%, themed("secondary") 50%, themed("accent") 100%);
+            border-radius: 20px;
+          }
+
+          &::-webkit-slider-runnable-track {
+            background: linear-gradient(to right, themed("primary") 0%, themed("secondary") 50%, themed("accent") 100%);
+            border-radius: 30px;
+          }
+
+          &::-moz-range-progress {
+            background-color: themed("text");
+          }
+
+          &::-webkit-progress-value {
+            background-color: themed("text");
+          }
+
+        }
+
+        .track_timer {
+          flex-grow: 1;
+          width: 100%;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      svg {
+        color: themed("accent");
+        margin-right: 1rem;
+        font-size: 2rem;
+      }
+    }
+
+    .volume_progress_container {
+      margin-right: 1rem;
+
+      .volume_bar {
+        height: 25px;
+        -webkit-appearance: none;
+        margin: 10px 0;
+        width: 100%;
+        background-color: themed("primary");
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 7px;
+          cursor: pointer;
+          background: themed("third");
+          border-radius: 50px;
+          border: 0 solid #000000;
+        }
+
+        &::-webkit-slider-thumb {
+          box-shadow: 1px 1px 0 themed("third");
+          border: 0 solid themed("accent");
+          height: 18px;
+          width: 7px;
+          border-radius: 25px;
+          background: themed("accent");
+          cursor: pointer;
+          appearance: none;
+          margin-top: -5.5px;
+        }
+
+        &:focus::-webkit-slider-runnable-track {
+          background: themed("third");
+        }
+
+        &::-moz-range-track {
+          width: 100%;
+          height: 7px;
+          cursor: pointer;
+          animate: 0.2s;
+          box-shadow: 0 0 0 #000000;
+          background: themed("secondary");
+          border-radius: 50px;
+          border: 0 solid #000000;
+        }
+
+        &::-moz-range-thumb {
+          box-shadow: 1px 1px 0 themed("third");
+          border: 0 solid themed("accent");
+          height: 18px;
+          width: 18px;
+          border-radius: 25px;
+          background: black;
+          cursor: pointer;
+        }
+
+        &::-ms-track {
+          width: 100%;
+          height: 7px;
+          cursor: pointer;
+          animate: 0.2s;
+          background: transparent;
+          border-color: transparent;
+          color: transparent;
+        }
+
+        &::-ms-fill-lower {
+          background: themed("third");
+          border: 0 solid #000000;
+          border-radius: 100px;
+          box-shadow: 0 0 0 #000000;
+        }
+
+        &::-ms-fill-upper {
+          background: themed("third");
+          border: 0 solid #000000;
+          border-radius: 100px;
+          box-shadow: 0 0 0 #000000;
+        }
+
+        &::-ms-thumb {
+          margin-top: 1px;
+          box-shadow: 1px 1px 0 #7DF9FF;
+          border: 0 solid #D2E334;
+          height: 18px;
+          width: 18px;
+          border-radius: 25px;
+          background: #FF5E5E;
+          cursor: pointer;
+        }
+
+        &:focus::-ms-fill-lower {
+          background: themed("third");
+        }
+
+        &:focus::-ms-fill-upper {
+          background: themed("third");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import "../../styles/theme.module.scss";
+
+.navbar {
+  @include themify() {
+    @include mobile {
+      justify-content: center;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0 0 20px 20px;
+    font-size: 1.2rem;
+
+    background-color: themed("primary");
+
+    .left {
+      @include mobile {
+        width: 100%;
+      }
+      display: flex;
+      justify-content: space-around;
+      //padding: 0 10px;
+      align-items: center;
+
+      a {
+        padding: 0 10px;
+      }
+
+      span {
+
+        color: themed("text");
+
+        &:hover {
+          color: themed("accent");
+        }
+      }
+
+      .theme_mobile {
+        @include mobile {
+          display: flex;
+        }
+        color: themed("id_text");
+        display: none;
+        align-items: center;
+      }
+    }
+
+    .right {
+      @include mobile {
+        display: none;
+      }
+
+      display: flex;
+      width: 250px;
+      flex-direction: row;
+      justify-content: space-around;
+      color: themed("text");
+
+      .theme {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: themed("accent");
+        }
+      }
+
+      .user {
+        display: flex;
+        align-self: center;
+
+        &:hover {
+          color: themed("accent");
+        }
+      }
+
+      .logout {
+        display: flex;
+        align-self: center;
+
+        &:hover {
+          color: themed("accent");
+        }
+      }
+    }
+  }
+}

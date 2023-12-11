@@ -1,0 +1,61 @@
+$themes: (
+    "dark": (
+            primary: #333333,
+            secondary: #7DF9FF,
+            third: #CCCCCC,
+            accent_slight: rgba(13, 39, 100, 0.62),
+            accent: #FF5E5E,
+            accent_bg: #52be4f,
+            background: #000000,
+            text: #FFFFFF,
+            id_text: #FFFFFF,
+            dark_text: #000000,
+            thumb: #a4f1a4,
+    ),
+    "light": (
+            primary: #FFC4D6,
+            secondary: #87CEEB,
+            third: #ddebdd,
+            accent_slight: #619361,
+            accent: #FFF44F,
+            accent_bg: #e33469,
+            background: #ffffff,
+            text: #FFFFFF,
+            id_text: #000000,
+            dark_text: #000000,
+            thumb: #ef7b3f,
+    ),
+);
+
+// import in any styles file, cover it by themify
+// and then themed("name_of_theme_key"), paint all component
+// at colors you choose
+@mixin themify() {
+    @each $theme, $map in $themes {
+        .#{$theme} {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), "#{$key}");
+                $theme-map: map-merge(
+                        $theme-map,
+                        (
+                            $key: $value,
+                        )
+                ) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+// using only inside "themify" function
+@function themed($key: "primary") {
+    @return map-get($theme-map, $key);
+}
+
+@mixin mobile {
+  @media (max-width: 520px) {
+    @content;
+  }
+}

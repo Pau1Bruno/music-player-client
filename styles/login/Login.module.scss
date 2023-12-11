@@ -1,0 +1,94 @@
+@import '../theme.module.scss';
+
+.login_page {
+  background-image: url("background_for_login.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .form_container {
+    background-color: #333333;
+    width: 400px;
+    padding: 25px 25px 15px 25px;
+    margin: 10px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    input {
+      box-sizing: border-box;
+      border: none;
+      background-color: #CCCCCC;
+      text-indent: 20px;
+      height: 54px;
+      width: 100%;
+    }
+
+    .username {
+      width: 100%;
+      display: flex;
+
+      .username_input {
+        border-radius: 16px 16px 0 0;
+      }
+    }
+
+    .password {
+      position: relative;
+      display: flex;
+      width: 100%;
+
+      .password_icon {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        bottom: 15px;
+
+        color: #333333;
+      }
+    }
+
+    .log_in {
+      background-color: #7DF9FF;
+      border: none;
+      border-radius: 0 0 16px 16px;
+      height: 27px;
+      width: 100%;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+
+      .register_link {
+        flex-grow: 2;
+        flex-shrink: 1;
+      }
+
+      .forgot_link {
+        flex-grow: 1;
+      }
+
+      a {
+        text-align: center;
+        color: #CCCCCC;
+
+        &:hover {
+          color: #7DF9FF;
+        }
+      }
+    }
+  }
+}
+

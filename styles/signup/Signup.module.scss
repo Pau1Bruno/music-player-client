@@ -1,0 +1,79 @@
+@import "../../styles/theme.module";
+
+.signup {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("background_for_signup.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding: 25px 25px 15px 25px;
+    background-color: #333333;
+    border-radius: 16px;
+    gap: 10px;
+
+    input {
+      box-sizing: border-box;
+      border: none;
+      background-color: #CCCCCC;
+      text-indent: 20px;
+      width: 100%;
+      height: 54px;
+    }
+
+    .username_input {
+      width: 100%;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .password {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+
+      .password_icon {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        bottom: 15px;
+
+        color: #333333;
+      }
+    }
+
+    .sign_up {
+      background-color: #7DF9FF;
+      border: none;
+      border-radius: 0 0 16px 16px;
+      height: 27px;
+      width: 100%;
+    }
+
+    .links {
+      width: 100%;
+      margin-left: 15px;
+
+      a {
+        display: flex;
+        color: white;
+
+        &:hover {
+          color: #7DF9FF;
+        }
+      }
+    }
+  }
+}

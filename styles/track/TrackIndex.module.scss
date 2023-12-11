@@ -1,0 +1,47 @@
+@import "../theme.module";
+
+@include themify() {
+  .page {
+    padding: 20px 0 100px 0;
+    .container {
+      margin: auto;
+
+      @include mobile {
+        width: 80%;
+      }
+
+      width: 420px;
+      color: themed("text");
+      background-color: themed("primary");
+      border-radius: 20px;
+      padding: 20px;
+
+      .tracks {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+
+        h3 {
+          margin: 0;
+        }
+
+        a {
+          font-size: 1.2rem;
+          color: themed("accent");
+        }
+
+      }
+    }
+
+    .search {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 20px auto;
+      text-align: center;
+      background-color: themed("third");
+      height: 50px;
+      border-radius: 20px;
+    }
+  }
+}
