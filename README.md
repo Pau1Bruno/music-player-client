@@ -1,23 +1,35 @@
 
-## Starting developing server
+# Client part of Music Player
+## Stack: TS, Next.js, Redux, RTK Query, SCSS
 
+> ## About Project:
+> - Play, download, delete tracks.
+> - A page for each track with comments.
+> - Custom API for working with tracks, users, comments.
+> - Custom authorization with password encryption on the server.
+> - Implementation of changing themes using @mixin and context.
+
+> ### Client has:
+> - Login and Sign Up pages
+> - Themezation using @mixin (scss) and context
+> - Responsive design
+
+## Why Next.js?
+### There are a lot of benefits, but i chose these:
+- Improve SEO
+- Image optimization
+- Convenient architecture
+
+---
+
+
+### To run client in watch mode: 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### To run client:
+```bash
+npm run start
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
